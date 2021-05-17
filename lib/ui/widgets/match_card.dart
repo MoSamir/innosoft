@@ -11,27 +11,30 @@ class MatchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         TeamIcon(
           team: match.homeTeam,
         ),
-        Expanded(
-            child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              match.matchTime,
-              style: Assets.titles,
-            ),
-            Text(
-              match.matchDate,
-              style: Assets.subTitles,
-            ),
-          ],
-        )),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                match.matchTime,
+                style: Assets.titles,
+              ),
+              Text(
+                match.matchDate,
+                style: Assets.subTitles,
+              ),
+            ],
+          ),
+        ),
         TeamIcon(
-          team: match.awayTeam,
+          team: match.homeTeam,
         ),
       ],
     );

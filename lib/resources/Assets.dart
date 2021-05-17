@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 
 class Assets {
-  // COLORS
+  // ------------------- COLORS ------------------------
   static const Color darkBlueColor = Color(0xff0F1737);
   static const Color homeBackgroundColor = Color(0xffF3F3F3);
 
-  // IMAGES
+  // ----------------- FONTS ----------------------------
+
+  static const String _FONTS_ROOT = "assets/fonts/";
+  static const String fontAJanaat = _FONTS_ROOT + "AAJannatLT.ttf";
+
+  // ----------------- VIDEOS -----------------------------
+
+  static const String _VIDEOS_ROOT = "assets/raw/";
+  static const String homeVideo = _VIDEOS_ROOT + "video_sample.mp4";
+
+  // ----------- IMAGES ------------------------------
 
   static const String _IMAGES_ROOT = "assets/images/";
 

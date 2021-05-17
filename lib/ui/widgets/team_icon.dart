@@ -10,6 +10,8 @@ class TeamIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
+      alignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.center,
       direction: Axis.horizontal,
       children: [
         Image.asset(
@@ -17,12 +19,13 @@ class TeamIcon extends StatelessWidget {
           height: 50,
           width: 50,
         ),
-        SizedBox(
-          width: 5,
-        ),
-        Text(
-          team.teamName,
-          style: Assets.headlines,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 5.0),
+          child: Text(
+            team.teamName,
+            textAlign: TextAlign.center,
+            style: Assets.headlines,
+          ),
         )
       ],
     );

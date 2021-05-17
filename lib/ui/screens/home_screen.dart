@@ -20,10 +20,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   ChewieController chewieController = ChewieController(
-    videoPlayerController: VideoPlayerController.network(
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4'),
+    autoInitialize: true,
+    videoPlayerController: VideoPlayerController.asset(Assets.homeVideo),
     autoPlay: false,
     looping: false,
+    aspectRatio: 5 / 6.0,
   );
 
   List<Match> matches = [];
@@ -34,7 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
   void dispose() {
     chewieController.pause();
     chewieController.dispose();
-
     super.dispose();
   }
 
@@ -134,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -230,7 +230,6 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               padding: EdgeInsets.symmetric(vertical: 10),
-              physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -245,6 +244,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Image.asset(
                           Assets.sponsorImg,
                           fit: BoxFit.contain,
+                          alignment: Alignment.center,
                         ),
                       ),
                     ),
